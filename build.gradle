@@ -48,6 +48,10 @@ dependencies {
     liquibaseRuntime 'org.postgresql:postgresql'
     liquibaseRuntime 'org.yaml:snakeyaml:1.30'
     liquibaseRuntime sourceSets.main.output
+
+    implementation 'org.mapstruct:mapstruct:1.5.2.Final'
+    annotationProcessor 'org.mapstruct:mapstruct-processor:1.5.2.Final'
+    annotationProcessor "org.projectlombok:lombok-mapstruct-binding:0.2.0"
 }
 
 apply plugin: "org.liquibase.gradle"
