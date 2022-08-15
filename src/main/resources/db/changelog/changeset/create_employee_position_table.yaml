@@ -1,0 +1,58 @@
+databaseChangeLog:
+  - changeSet:
+      id: create_employee_position_table
+      author: Pyatnitsky
+      changes:
+        - createTable:
+            tableName: employee_position
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    primaryKeyName: employee_position_pkey
+                    nullable: false
+              - column:
+                  name: active
+                  type: boolean
+                  defaultValueBoolean: false
+              - column:
+                  name: department_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    foreignKeyName: department_id
+                    references: department(id)
+              - column:
+                  name: employee_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    foreignKeyName: employee_id
+                    references: employee(id)
+              - column:
+                  name: project_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    foreignKeyName: project_id
+                    references: project(id)
+              - column:
+                  name: position_id
+                  type: bigint
+                  constraints:
+                    foreignKeyName: position_id
+                    references: position(id)
+              - column:
+                  name: create_date
+                  type: date
+                  constraints:
+                    nullable: false
+              - column:
+                  name: modified_date
+                  type: date
+              - column:
+                  name: end_date
+                  type: date

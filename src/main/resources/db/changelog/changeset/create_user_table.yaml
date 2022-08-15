@@ -1,0 +1,28 @@
+databaseChangeLog:
+  - changeSet:
+      id: create_user_table
+      author: Pyatnitsky
+      changes:
+        - createTable:
+            tableName: user
+            columns:
+              - column:
+                  name: username
+                  type: varchar(50)
+                  autoIncrement: false
+                  constraints:
+                    primaryKey: true
+                    primaryKeyName: user_pkey
+                    nullable: false
+              - column:
+                  name: password
+                  type: varchar(100)
+                  constraints:
+                    nullable: false
+                    unique: true
+              - column:
+                  name: enabled
+                  type: boolean
+                  defaultValueBoolean: false
+                  constraints:
+                    nullable: false

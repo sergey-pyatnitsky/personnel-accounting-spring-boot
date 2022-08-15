@@ -1,0 +1,36 @@
+databaseChangeLog:
+  - changeSet:
+      id: create_department_table
+      author: Pyatnitsky
+      changes:
+        - createTable:
+            tableName: department
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    primaryKeyName: department_pkey
+                    nullable: false
+              - column:
+                  name: active
+                  type: boolean
+                  defaultValueBoolean: false
+              - column:
+                  name: name
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: create_date
+                  type: date
+                  constraints:
+                    nullable: false
+              - column:
+                  name: modified_date
+                  type: date
+              - column:
+                  name: end_date
+                  type: date

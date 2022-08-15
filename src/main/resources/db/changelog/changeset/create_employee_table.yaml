@@ -1,0 +1,54 @@
+databaseChangeLog:
+  - changeSet:
+      id: create_employee_table.yaml
+      author: Pyatnitsly
+      changes:
+        - createTable:
+            tableName: employee
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    primaryKeyName: employee_pkey
+                    nullable: false
+              - column:
+                  name: username
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+                    unique: true
+                    foreignKeyName: username
+                    references: user(username)
+              - column:
+                  name: name
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: active
+                  type: boolean
+                  defaultValueBoolean: false
+              - column:
+                  name: department_id
+                  type: bigint
+                  constraints:
+                    foreignKeyName: department_id
+                    references: department(id)
+              - column:
+                  name: profile_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    foreignKeyName: profile_id
+                    references: profile(id)
+              - column:
+                  name: create_date
+                  type: date
+                  constraints:
+                    nullable: false
+              - column:
+                  name: modified_date
+                  type: date

@@ -1,0 +1,58 @@
+databaseChangeLog:
+  - changeSet:
+      id: create_task_table
+      author: Pyatnitsky
+      changes:
+        - createTable:
+            tableName: task
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    primaryKeyName: task_pkey
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: description
+                  type: text
+              - column:
+                  name: status
+                  type: varchar(15)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: assignee_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    foreignKeyName: assignee_id
+                    references: employee(id)
+              - column:
+                  name: project_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    foreignKeyName: project_id
+                    references: project(id)
+              - column:
+                  name: reporter_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    foreignKeyName: reporter_id
+                    references: employee(id)
+              - column:
+                  name: create_date
+                  type: date
+                  constraints:
+                    nullable: false
+              - column:
+                  name: modified_date
+                  type: date

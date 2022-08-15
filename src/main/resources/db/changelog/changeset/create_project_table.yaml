@@ -1,0 +1,43 @@
+databaseChangeLog:
+  - changeSet:
+      id: create_project_table
+      author: Pyatnitsky
+      changes:
+        - createTable:
+            tableName: project
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    primaryKeyName: project_pkey
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: active
+                  type: boolean
+                  defaultValueBoolean: false
+              - column:
+                  name: department_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    foreignKeyName: department_id
+                    references: department(id)
+              - column:
+                  name: create_date
+                  type: date
+                  constraints:
+                    nullable: false
+              - column:
+                  name: modified_date
+                  type: date
+              - column:
+                  name: end_date
+                  type: date

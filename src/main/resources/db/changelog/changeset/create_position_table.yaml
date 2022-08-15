@@ -1,0 +1,27 @@
+databaseChangeLog:
+  - changeSet:
+      id: create_position_table
+      author: Pyatnitsky
+      changes:
+        - createTable:
+            tableName: position
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    primaryKeyName: position_pkey
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(40)
+              - column:
+                  name: create_date
+                  type: date
+                  constraints:
+                    nullable: false
+              - column:
+                  name: modified_date
+                  type: date

@@ -1,0 +1,42 @@
+databaseChangeLog:
+  - changeSet:
+      id: create_profile_table
+      author: Pyatnitsky
+      changes:
+        - createTable:
+            tableName: profile
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    primaryKeyName: profile_pkey
+                    nullable: false
+              - column:
+                  name: email
+                  type: varchar(255)
+              - column:
+                  name: phone
+                  type: varchar(60)
+              - column:
+                  name: address
+                  type: varchar(255)
+              - column:
+                  name: education
+                  type: varchar(2048)
+              - column:
+                  name: skills
+                  type: text
+              - column:
+                  name: image_id
+                  type: varchar(45)
+              - column:
+                  name: create_date
+                  type: date
+                  constraints:
+                    nullable: false
+              - column:
+                  name: modified_date
+                  type: date
