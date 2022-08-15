@@ -1,0 +1,37 @@
+package com.personnel_accounting.entity.domain;
+
+import lombok.*;
+import org.hibernate.annotations.Type;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Getter
+@Setter
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
+@Entity
+@Table(name = "profile")
+public class Profile extends BaseEntity {
+
+    @Column(name = "education", length = 2048)
+    private String education;
+
+    @Column(name = "address")
+    private String address;
+
+    @Column(name = "phone", length = 60)
+    private String phone;
+
+    @Column(name = "email")
+    private String email;
+
+    @Column(name = "skills")
+    @Type(type = "text")
+    private String skills;
+
+    @Column(name = "image_id", length = 45)
+    private String imageId;
+}
