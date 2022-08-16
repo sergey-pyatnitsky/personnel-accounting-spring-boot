@@ -9,9 +9,9 @@ import java.util.List;
 @Mapper(componentModel = "spring")
 public interface ReportCarsMapper {
 
-    ReportCardDTO reportCarsToReportCartDto(ReportCard reportCard);
-    ReportCard reportCardDtoToReportCard(ReportCardDTO reportCardDTO);
+    ReportCardDTO toDto(ReportCard reportCard);
+    ReportCard toModal(ReportCardDTO reportCardDTO);
 
-    List<ReportCardDTO> reportCardListToReportCardDtoList(List<ReportCard> reportCardList);
-    List<ReportCard> reportCardDtoListToReportCardList(List<ReportCardDTO> reportCardDTOS);
+    List<ReportCardDTO> toDtoList(List<ReportCard> reportCardList);
+    List<ReportCard> toModalList(List<ReportCardDTO> reportCardDTOS);
 }

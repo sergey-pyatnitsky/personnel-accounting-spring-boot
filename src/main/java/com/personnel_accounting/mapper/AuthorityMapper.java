@@ -9,9 +9,9 @@ import java.util.Set;
 @Mapper(componentModel = "spring")
 public interface AuthorityMapper {
 
-    AuthorityDTO authorityToAuthorityDto(Authority authority);
-    Authority authorityDtoToAuthority(AuthorityDTO authorityDTO);
+    AuthorityDTO toDto(Authority authority);
+    Authority toModal(AuthorityDTO authorityDTO);
 
-    Set<AuthorityDTO> authoritySetToAuthorityDtoSet(Set<Authority> authorities);
-    Set<Authority> authorityDtoSetToAuthoritySet(Set<AuthorityDTO> authorityDTOS);
+    Set<AuthorityDTO> toDtoList(Set<Authority> authorities);
+    Set<Authority> toModalList(Set<AuthorityDTO> authorityDTOS);
 }

@@ -9,9 +9,9 @@ import java.util.List;
 @Mapper(componentModel = "spring")
 public interface EmployeeMapper {
 
-    EmployeeDTO employeeToEmployeeDto(Employee employee);
-    Employee employeeDtoToEmployee(EmployeeDTO employeeDTO);
+    EmployeeDTO toDto(Employee employee);
+    Employee toModal(EmployeeDTO employeeDTO);
 
-    List<EmployeeDTO> employeeListToEmployeeDtoList(List<Employee> employees);
-    List<Employee> employeeDtoListToEmployeeList(List<EmployeeDTO> employeeDTOS);
+    List<EmployeeDTO> toDtoList(List<Employee> employees);
+    List<Employee> toModalList(List<EmployeeDTO> employeeDTOS);
 }

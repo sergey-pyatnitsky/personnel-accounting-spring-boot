@@ -9,9 +9,9 @@ import java.util.List;
 @Mapper(componentModel = "spring")
 public interface ProfileMapper {
 
-    ProfileDTO profileToProfileDto(Profile profile);
-    Profile profileDtoToProfile(ProfileDTO profileDTO);
+    ProfileDTO toDto(Profile profile);
+    Profile toModal(ProfileDTO profileDTO);
 
-    List<ProfileDTO> profileListToProfileDtoList(List<Profile> profileList);
-    List<Profile> profileDtoListToProfileList(List<ProfileDTO> profileDTOS);
+    List<ProfileDTO> toDtoList(List<Profile> profileList);
+    List<Profile> toModalList(List<ProfileDTO> profileDTOS);
 }

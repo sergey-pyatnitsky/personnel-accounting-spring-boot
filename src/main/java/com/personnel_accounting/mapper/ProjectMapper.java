@@ -9,9 +9,9 @@ import java.util.List;
 @Mapper(componentModel = "spring")
 public interface ProjectMapper {
 
-    ProjectDTO projectDtoToProject(Project project);
-    Project projectDtoToProject(ProjectDTO projectDTO);
+    ProjectDTO toDto(Project project);
+    Project toModal(ProjectDTO projectDTO);
 
-    List<ProjectDTO> projectListToProjectDtoList(List<Project> projectList);
-    List<Project> projectDtoListToProjectList(List<ProjectDTO> projectDTOS);
+    List<ProjectDTO> toDtoList(List<Project> projectList);
+    List<Project> toModalList(List<ProjectDTO> projectDTOS);
 }

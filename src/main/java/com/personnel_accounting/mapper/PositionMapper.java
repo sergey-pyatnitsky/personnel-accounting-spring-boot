@@ -9,9 +9,9 @@ import java.util.List;
 @Mapper(componentModel = "spring")
 public interface PositionMapper {
 
-    PositionDTO positionToPositionDto(Position position);
-    Position positionDtoToPosition(PositionDTO positionDTO);
+    PositionDTO toDto(Position position);
+    Position toModal(PositionDTO positionDTO);
 
-    List<PositionDTO> positionListToPositionDtoList(List<Position> positions);
-    List<Position> positionDtoListToPositionList(List<PositionDTO> positionDTOS);
+    List<PositionDTO> toDtoList(List<Position> positions);
+    List<Position> toModalList(List<PositionDTO> positionDTOS);
 }

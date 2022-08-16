@@ -9,9 +9,9 @@ import java.util.List;
 @Mapper(componentModel = "spring")
 public interface DepartmentMapper {
 
-    DepartmentDTO departmentToDepartmentDto (Department department);
-    Department DepartmentDtoToDepartment(DepartmentDTO departmentDTO);
+    DepartmentDTO toDto (Department department);
+    Department toModal(DepartmentDTO departmentDTO);
 
-    List<DepartmentDTO> departmentListToDepartmentDtoList(List<Department> departments);
-    List<Department> departmentDtoListToDepartmentList(List<DepartmentDTO> departmentDTOS);
+    List<DepartmentDTO> toDtoList(List<Department> departments);
+    List<Department> toModalList(List<DepartmentDTO> departmentDTOS);
 }
