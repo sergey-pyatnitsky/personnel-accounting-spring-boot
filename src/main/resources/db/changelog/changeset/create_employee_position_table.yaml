@@ -56,3 +56,6 @@ databaseChangeLog:
               - column:
                   name: end_date
                   type: date
+              - column:
+                  name: start_date
+                  type: date

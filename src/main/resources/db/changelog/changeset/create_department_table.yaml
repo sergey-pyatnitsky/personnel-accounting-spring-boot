@@ -24,6 +24,9 @@ databaseChangeLog:
                   constraints:
                     nullable: false
               - column:
+                  name: start_date
+                  type: date
+              - column:
                   name: create_date
                   type: date
                   constraints:
