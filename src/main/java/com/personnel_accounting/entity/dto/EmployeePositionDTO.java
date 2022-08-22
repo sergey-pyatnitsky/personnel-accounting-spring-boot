@@ -10,6 +10,6 @@ public class EmployeePositionDTO {
     private DepartmentDTO department;
     private PositionDTO position;
     private boolean isActive;
-    private String createDate;
+    private String startDate;
     private String endDate;
 }

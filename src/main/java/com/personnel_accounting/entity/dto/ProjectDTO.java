@@ -14,6 +14,7 @@ public class ProjectDTO {
     private String name;
     private DepartmentDTO department;
     private boolean isActive;
+    private String startDate;
     private String createDate;
     private String endDate;
 }

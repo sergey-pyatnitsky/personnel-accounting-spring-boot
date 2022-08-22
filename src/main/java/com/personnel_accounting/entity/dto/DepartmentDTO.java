@@ -13,6 +13,7 @@ public class DepartmentDTO {
     @Size(max = 256, message = "{department.validator.name.size}")
     private String name;
     private boolean isActive;
+    private String startDate;
     private String createDate;
     private String endDate;
 }
