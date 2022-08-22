@@ -17,6 +17,9 @@ public class EmployeePosition extends BaseEntity {
     @Column(name = "active", columnDefinition = "boolean default false")
     private boolean isActive;
 
+    @Column(name = "start_date")
+    private Date startDate;
+
     @Column(name = "end_date")
     private Date endDate;
 
