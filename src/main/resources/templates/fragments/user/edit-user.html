@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml" lang="ru">
+
+<body>
+  <div class="container-fluid md-5 pt-5" th:fragment="edit-user" id="content-edit-user" style="display: none;">
+    <h3 class="mb-4" th:text="#{user.edit.title}"></h3>
+    <div class="alert"></div>
+    <div th:replace="~{fragments/user/tab-user :: tab-user}"></div>
+    <div class="row">
+      <div class="col">
+        <table class="table table-hover" id="edit_users_table">
+          <thead>
+            <tr>
+              <th class="col-1">#</th>
+              <th class="col-2" th:text="#{user.edit.table.login}"></th>
+              <th class="col-3" th:text="#{user.edit.table.name}"></th>
+              <th class="col-2" th:text="#{user.edit.table.role}"></th>
+              <th class="col-1" th:text="#{user.edit.table.active}"></th>
+              <th class="col-2" th:text="#{user.edit.table.action}"></th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+    <div class="modal fade" id="editUserModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle" th:text="#{user.edit.modal.title}"></h5>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="inputNameEditModal" th:text="#{user.edit.modal.label.name}"></label>
+                <input type="text" class="form-control" id="inputNameEditModal"
+                       th:placeholder="#{user.edit.modal.placeholder}" required>
+              </div>
+              <div class="form-group">
+                <label for="roleSelectEditModal" th:text="#{user.edit.modal.label.role}"></label><br>
+                <select class="form-control" id="roleSelectEditModal">
+                  <option value="ADMIN" sec:authorize="hasAuthority('SUPER_ADMIN')">ADMIN</option>
+                  <option value="DEPARTMENT_HEAD">DEPARTMENT_HEAD</option>
+                  <option value="PROJECT_MANAGER">PROJECT_MANAGER</option>
+                  <option value="EMPLOYEE">EMPLOYEE</option>
+                </select>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                    th:text="#{user.edit.modal.button.close}"></button>
+            <button type="button" class="btn btn-primary" id="modal_save" data-dismiss="modal"
+                    th:text="#{user.edit.modal.button.save}"></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

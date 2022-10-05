@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml" lang="ru">
+
+<body>
+<div class="container-fluid p-4 p-md-5 pt-5" th:fragment="add-project" id="content-add-project">
+  <h3 class="mb-4" th:text="#{project.add.title}"></h3>
+  <div class="alert"></div>
+  <div class="row mb-5">
+    <div class="col-7">
+      <form>
+        <div class="form-group">
+          <label for="projectNameInput" th:text="#{project.add.label}"></label>
+          <input type="text" class="form-control" id="projectNameInput"  th:placeholder="#{project.add.placeholder}" required>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="row" sec:authorize="hasAuthority('ADMIN')">
+    <div class="col">
+      <table class="table table-hover" id="view_departments_table">
+        <thead>
+        <tr>
+          <th class="col-1">#</th>
+          <th class="col-4" th:text="#{project.add.table.name}"></th>
+          <th class="col-2" th:text="#{project.add.table.active}"></th>
+          <th class="col-2" th:text="#{project.add.table.start_date}"></th>
+          <th class="col-2" th:text="#{project.add.table.action}"></th>
+        </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+</body>
+</html>

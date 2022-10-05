@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ru">
+
+<body>
+  <div class="container-fluid md-5 pt-5" th:fragment="activate-user" id="content-activate-user"
+    style="display: none">
+    <h3 class="mb-4" th:text="#{user.activate.title}">Активирование пользователей</h3>
+    <div class="alert"></div>
+    <div th:replace="~{fragments/user/tab-user :: tab-user}"></div>
+    <div class="row">
+      <div class="col">
+        <table class="table table-hover" id="activate_users_table">
+          <thead>
+            <tr>
+              <th class="col-1">#</th>
+              <th class="col-2" th:text="#{user.activate.table.login}">Логин</th>
+              <th class="col-4" th:text="#{user.activate.table.name}">ФИО</th>
+              <th class="col-2" th:text="#{user.activate.table.role}">Роль</th>
+              <th class="col-2" th:text="#{user.activate.table.active}">Активация</th>
+              <th class="col-1" th:text="#{user.activate.table.action}">Действие</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

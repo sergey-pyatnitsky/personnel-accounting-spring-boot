@@ -1,0 +1,15 @@
+.dataTable>thead>tr>th[class*="sort"]:after {
+    content: "" !important;
+}
+
+.dataTable>thead>tr>th[class*="sort"]:before {
+    content: "" !important;
+}
+
+table.dataTable {
+    no-footer: none;
+}
+
+table.dataTable.no-footer {
+    border-bottom: none;
+}

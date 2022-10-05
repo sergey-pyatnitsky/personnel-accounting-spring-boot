@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml" lang="ru">
+
+<body>
+<div class="container-fluid p-4 p-md-5 pt-5" th:fragment="add-task" id="content-add-task">
+  <h3 class="mb-4" th:text="#{task.add.title}"></h3>
+  <div class="alert"></div>
+  <div class="row mb-5" id="tab_add_task"
+       sec:authorize="hasAnyAuthority('ADMIN', 'DEPARTMENT_HEAD', 'PROJECT_MANAGER')">
+    <div class="col-12">
+      <ul class="nav nav-tabs justify-content-center">
+        <li class="nav-item" sec:authorize="hasAuthority('ADMIN')">
+          <a class="nav-link" id="departmentBtnTask" th:text="#{task.add.tab.department}"></a>
+        </li>
+        <li class="nav-item" sec:authorize="hasAnyAuthority('ADMIN', 'DEPARTMENT_HEAD', 'PROJECT_MANAGER')">
+          <a class="nav-link" id="projectBtnTask" th:text="#{task.add.tab.project}"></a>
+        </li>
+        <li class="nav-item" sec:authorize="hasAnyAuthority('ADMIN', 'DEPARTMENT_HEAD', 'PROJECT_MANAGER')">
+          <a class="nav-link" id="employeeBtnTask" th:text="#{task.add.tab.employee}"></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="container-fluid p-4 p-md-5 pt-5" id="edit_tasks_div">
+    <div class="row" id="div_department_add_task_table" sec:authorize="hasAuthority('ADMIN')">
+      <div class="col">
+        <table class="table table-hover" id="department_add_task_table">
+          <thead>
+          <tr>
+            <th class="col-1">#</th>
+            <th class="col-4" th:text="#{task.add.department.table.name}"></th>
+            <th class="col-4" th:text="#{task.add.department.table.choice}"></th>
+          </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+    <div class="row" id="div_project_add_task_table"
+         sec:authorize="hasAnyAuthority('ADMIN', 'DEPARTMENT_HEAD', 'PROJECT_MANAGER')">
+      <div class="col">
+        <table class="table table-hover" id="project_add_task_table">
+          <thead>
+          <tr>
+            <th class="col-1">#</th>
+            <th class="col-4" th:text="#{task.add.project.table.name}"></th>
+            <th class="col-4" th:text="#{task.add.project.table.choice}"></th>
+          </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+    <div class="row" id="div_employee_add_task_table">
+      <div class="col">
+        <table class="table table-hover" id="employee_add_task_table">
+          <thead>
+          <tr>
+            <th class="col-1">#</th>
+            <th class="col-2" th:text="#{task.add.employee.table.login}"></th>
+            <th class="col-4" th:text="#{task.add.employee.table.name}"></th>
+            <th class="col-2" th:text="#{task.add.employee.table.role}"></th>
+            <th class="col-1" th:text="#{task.add.employee.table.active}"></th>
+            <th class="col-1" th:text="#{task.add.employee.table.choice}"></th>
+          </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+    <div id="div_add_tasks">
+      <div class="row mt-3">
+        <div class="col-7">
+          <form>
+            <div class="form-group">
+              <label for="taskNameInput" th:text="#{task.add.label.name}"></label>
+              <input type="email" class="form-control" id="taskNameInput" required>
+            </div>
+            <div class="form-group">
+              <label for="taskDescriptionInput" th:text="#{task.add.label.description}"></label>
+              <textarea class="form-control" id="taskDescriptionInput" rows="3" required></textarea>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col-7" style="padding-left:40%;">
+          <button class="btn btn-primary btn-block" type="submit" id="add_task_btn" th:text="#{task.add.button}"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
+

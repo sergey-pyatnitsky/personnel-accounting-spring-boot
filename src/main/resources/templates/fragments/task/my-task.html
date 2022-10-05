@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml" lang="ru">
+
+<body>
+<div class="container-fluid p-4 p-md-5 pt-5" th:fragment="my-task" id="content-my-task">
+  <h3 class="mb-4" th:text="#{my_task.page.title}"></h3>
+  <div class="alert d-none"></div>
+  <div class="row mb-5" id="tab_edit_task"
+       sec:authorize="hasAnyAuthority('ADMIN', 'DEPARTMENT_HEAD', 'PROJECT_MANAGER', 'EMPLOYEE')">
+    <div class="col-12">
+      <ul class="nav nav-tabs justify-content-center">
+        <li class="nav-item" sec:authorize="hasAnyAuthority('ADMIN', 'DEPARTMENT_HEAD', 'PROJECT_MANAGER', 'EMPLOYEE')">
+          <a class="nav-link" id="projectBtnToMyTask" th:text="#{my_task.tab.project}">Выбрать проект</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="resetBtn" th:text="#{task.view.tab.reset}"></a>
+        </li>
+      </ul>
+    </div>
+    <div class="col-12 m-1">
+      <ul class="nav nav-pills nav-fill justify-content-center" id="selectedItems"></ul>
+    </div>
+  </div>
+  <div class="container-fluid p-4 p-md-5 pt-5" id="edit_tasks_div">
+    <div class="row" id="div_project_my_task_task_table">
+      <div class="col">
+        <table class="table table-hover" id="project_my_task_task_table">
+          <thead>
+          <tr>
+            <th class="col-1">#</th>
+            <th class="col-4" th:text="#{my_task.project.table.name}"></th>
+            <th class="col-4" th:text="#{my_task.project.table.choice}"></th>
+          </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+    <div class="list-group" id="div_my_task_tasks_table">
+      <div class="btn-group" role="group" aria-label="Basic example">
+        <button type="button" class="btn btn-secondary" id="open_tasks_btn"
+                th:text="#{my_task.list.button.open}"></button>
+        <button type="button" class="btn btn-secondary" id="in_progress_tasks_btn"
+                th:text="#{my_task.list.button.in_progress}"></button>
+        <button type="button" class="btn btn-secondary" id="done_tasks_btn"
+                th:text="#{my_task.list.button.done}"></button>
+        <button type="button" class="btn btn-secondary" id="closed_tasks_btn"
+                th:text="#{my_task.list.button.closed}"></button>
+      </div>
+      <div class="container-fluid md-5 mt-2">
+        <table id="view_my_tasks_table">
+          <thead>
+          <tr>
+            <th>ID</th>
+            <th th:text="#{task.view.table.name}"></th>
+            <th th:text="#{task.view.table.description}"></th>
+            <th th:text="#{task.view.table.status}"></th>
+            <th th:text="#{task.view.table.date}"></th>
+            <th th:text="#{task.view.table.project}"></th>
+            <th th:text="#{task.view.table.assignee}"></th>
+            <th class="d-none" th:text="#{task.view.table.assignee}"></th>
+          </tr>
+          </thead>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

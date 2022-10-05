@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml" lang="ru">
+
+<body>
+<th:block th:fragment="navbar">
+  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd">
+    <div class="container-fluid">
+      <div class="row" style="width: 100%">
+        <div class="col-1" style="border-right:1px solid black;">
+          <a class="navbar-brand" href="/page/main"
+             style="font-size: 30px; font-weight: bold; width: 100px">Tasky</a>
+        </div>
+        <div class="col-2" style="margin-top: 15px" th:text="${title}"></div>
+        <div class="col-5"></div>
+        <div class="d-flex col-4">
+          <div>
+            <h5 style="margin-right: 20px" id="navbar_name"></h5>
+            <h6 style="margin-right: 20px; font-size: 12px" id="navbar_username"></h6>
+          </div>
+          <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" id="lang_menu" data-toggle="dropdown"
+                    aria-expanded="true">
+              <img th:src="@{/resources/images/lang.png}" style="width: 57px; height: 55px" alt="">
+              <span class="caret"></span>
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink" style="right: 0; left: auto;">
+              <button type="submit" class="dropdown-item" id="en_lang" value="en">English</button>
+              <button type="submit" class="dropdown-item" id="ru_lang" value="ru">Русский</button>
+            </div>
+          </div>
+          <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown"
+                    aria-expanded="true">
+              <img id="navbar_image" class="round" style="width: 57px; height: 55px" alt="">
+              <span class="caret"></span>
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink" style="right: 0; left: auto;">
+              <a class="dropdown-item" href="/page/profile" th:text="#{navbar.profile}"
+                 sec:authorize="hasAnyAuthority('ADMIN', 'DEPARTMENT_HEAD', 'PROJECT_MANAGER', 'EMPLOYEE')"></a>
+              <form th:action="@{/logout}" method="post">
+                <button type="submit" class="dropdown-item" id="logoutBtn" th:text="#{navbar.logout}"></button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</th:block>
+</body>
+
+</html>

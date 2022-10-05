@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ru">
+
+<body>
+<div class="container-fluid p-4 p-md-5 pt-5" th:fragment="add-position" id="content-add-position">
+  <h3 class="mb-4" th:text="#{position.add.title}"></h3>
+  <div class="alert"></div>
+  <div class="row">
+    <div class="col-5">
+      <form>
+        <div class="form-group">
+          <label for="positionNameInput" th:text="#{position.add.label}"></label>
+          <input type="text" class="form-control" id="positionNameInput"
+                 th:placeholder="#{position.add.placeholder}" required>
+        </div>
+        <div class="form-group" style="padding-top:5%;">
+          <button class="btn btn-primary btn-block" type="submit" id="position_save_btn"
+                  th:text="#{position.add.button}"></button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+</body>
+</html>

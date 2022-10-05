@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml" lang="ru">
+
+<body>
+  <div class="row mb-5" th:fragment="tab-user">
+    <div class="col-12">
+      <ul class="nav nav-tabs justify-content-center">
+        <li class="nav-item">
+          <a class="nav-link" id="employee_btn" th:text="#{user.tab.employee}"></a>
+        </li>
+        <li class="nav-item" sec:authorize="hasAuthority('SUPER_ADMIN')" >
+          <a class="nav-link" id="admin_btn" th:text="#{user.tab.admin}"></a>
+        </li>
+        <li class="nav-item" id="toRemoveTab">
+          <a class="nav-link" id="dismissed_btn" th:text="#{user.tab.dismissed}"></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>

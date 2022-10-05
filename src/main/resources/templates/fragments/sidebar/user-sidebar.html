@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ru">
+
+<body>
+<nav th:fragment="user-sidebar" id="sidebar" class="navbar navbar-expand-xll navbar-light bg-light sidebar">
+  <ul class="list-unstyled components mb-5" id="menu-list">
+    <a role="button" class="sidebar_element sidebar_bold_element first_button" id="view-user" th:text="#{user.sidebar.view}"></a>
+      <a role="button" class="sidebar_element" id="activate-user" th:text="#{user.sidebar.activate}"></a>
+      <a role="button" class="sidebar_element" id="edit-user" th:text="#{user.sidebar.edit}"></a>
+  </ul>
+</nav>
+</body>
+</html>

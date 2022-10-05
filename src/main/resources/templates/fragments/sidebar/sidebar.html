@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml" lang="ru">
+
+<body>
+<nav th:fragment="sidebar" id="sidebar" class="navbar navbar-expand-xll navbar-light bg-light sidebar">
+  <ul class="list-unstyled components mb-5" id="menu-list">
+    <a role="button" class="main_sidebar_button" th:href="@{/page/user(lang=${lang})}" sec:authorize="hasAnyAuthority('SUPER_ADMIN', 'ADMIN')"
+       th:text="#{sidebar.employee}"></a>
+    <a role="button" class="main_sidebar_button" th:href="@{/page/department(lang=${lang})}" sec:authorize="hasAuthority('ADMIN')" th:text="#{sidebar.department}"></a>
+    <a role="button" class="main_sidebar_button" th:href="@{/page/project(lang=${lang})}" sec:authorize="hasAnyAuthority('ADMIN', 'DEPARTMENT_HEAD')"
+       th:text="#{sidebar.project}"></a>
+    <a role="button" class="main_sidebar_button" th:href="@{/page/task(lang=${lang})}"
+       sec:authorize="hasAnyAuthority('ADMIN', 'DEPARTMENT_HEAD', 'PROJECT_MANAGER')"
+       th:text="#{sidebar.task}"></a>
+    <a role="button" class="main_sidebar_button" th:href="@{/page/my-task(lang=${lang})}" th:text="#{sidebar.my_task}"
+       sec:authorize="hasAnyAuthority('ADMIN', 'DEPARTMENT_HEAD', 'PROJECT_MANAGER', 'EMPLOYEE')"></a>
+    <a role="button" class="main_sidebar_button" th:href="@{/page/telephone-directory(lang=${lang})}"  href="/telephone-directory" th:text="#{sidebar.telephone_directory}"
+       sec:authorize="hasAnyAuthority('SUPER_ADMIN', 'ADMIN', 'DEPARTMENT_HEAD', 'PROJECT_MANAGER', 'EMPLOYEE')"></a>
+  </ul>
+</nav>
+</body>
+
+</html>

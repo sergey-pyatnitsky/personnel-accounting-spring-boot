@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml" lang="ru">
+
+<body>
+<div class="container-fluid p-4 p-md-5 pt-5" th:fragment="view-task" id="content-view-task">
+  <h3 class="mb-4" th:text="#{task.view.title}"></h3>
+  <div class="alert d-none"></div>
+  <div class="row mb-5" id="tab_view_task" sec:authorize="hasAnyAuthority('ADMIN', 'DEPARTMENT_HEAD', 'PROJECT_MANAGER')">
+    <div class="col-12">
+      <ul class="nav nav-tabs justify-content-center">
+        <li class="nav-item" sec:authorize="hasAuthority('ADMIN')">
+          <a class="nav-link" id="departmentBtnToAddTask" th:text="#{task.view.tab.department}"></a>
+        </li>
+        <li class="nav-item" sec:authorize="hasAnyAuthority('ADMIN', 'DEPARTMENT_HEAD', 'PROJECT_MANAGER')">
+          <a class="nav-link" id="projectBtnToAddTask" th:text="#{task.view.tab.project}"></a>
+        </li>
+        <li class="nav-item" sec:authorize="hasAnyAuthority('ADMIN', 'DEPARTMENT_HEAD', 'PROJECT_MANAGER')">
+          <a class="nav-link" id="resetBtn" th:text="#{task.view.tab.reset}"></a>
+        </li>
+      </ul>
+    </div>
+    <div class="col-12 m-1">
+      <ul class="nav nav-pills nav-fill justify-content-center" id="selectedItems"></ul>
+    </div>
+  </div>
+  <div class="container-fluid md-5">
+    <div class="row" id="div_department_view_task_table" sec:authorize="hasAuthority('ADMIN')">
+      <div class="col">
+        <table class="table table-hover" id="department_view_task_table">
+          <thead>
+          <tr>
+            <th class="col-1">#</th>
+            <th class="col-4" th:text="#{task.view.department.table.name}"></th>
+            <th class="col-4" th:text="#{task.view.department.table.choice}"></th>
+          </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+    <div class="row" id="div_project_view_task_table"
+         sec:authorize="hasAnyAuthority('ADMIN', 'DEPARTMENT_HEAD', 'PROJECT_MANAGER')">
+      <div class="col">
+        <table class="table table-hover" id="project_view_task_table">
+          <thead>
+          <tr>
+            <th class="col-1">#</th>
+            <th class="col-4" th:text="#{task.view.project.table.name}"></th>
+            <th class="col-4" th:text="#{task.view.project.table.choice}"></th>
+          </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+    <div class="list-group" id="div_view_tasks_table">
+      <div class="btn-group" role="group">
+        <button type="button" class="btn btn-primary" id="open_tasks_btn"
+                th:text="#{task.view.list.button.open}"></button>
+        <button type="button" class="btn btn-primary" id="in_progress_tasks_btn"
+                th:text="#{task.view.list.button.in_progress}"></button>
+        <button type="button" class="btn btn-primary" id="done_tasks_btn"
+                th:text="#{task.view.list.button.done}"></button>
+        <button type="button" class="btn btn-primary" id="closed_tasks_btn"
+                th:text="#{task.view.list.button.closed}"></button>
+      </div>
+      <div class="container-fluid md-5 mt-2">
+        <table id="view_tasks_table">
+          <thead>
+          <tr>
+            <th>ID</th>
+            <th th:text="#{task.view.table.name}"></th>
+            <th th:text="#{task.view.table.description}"></th>
+            <th th:text="#{task.view.table.status}"></th>
+            <th th:text="#{task.view.table.date}"></th>
+            <th th:text="#{task.view.table.project}"></th>
+            <th th:text="#{task.view.table.assignee}"></th>
+            <th class="d-none" th:text="#{task.view.table.assignee}"></th>
+          </tr>
+          </thead>
+        </table>
+      </div>
+    </div>
+
+    <div class="modal fade" id="task_edit_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+         aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle" th:text="#{task.edit.modal.title}"></h5>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="modal_input_name" th:text="#{task.edit.modal.label.name}"></label>
+                <input type="text" class="form-control" id="modal_input_name" required>
+              </div>
+              <div class="form-group">
+                <label for="modal_input_description" th:text="#{task.edit.modal.label.description}"></label>
+                <textarea class="form-control" id="modal_input_description" rows="3" required></textarea>
+              </div>
+              <div class="form-group">
+                <label for="modal_input_status">Статус задачи</label><br>
+                <select class="form-control" id="modal_input_status">
+                  <option value="OPEN">OPEN</option>
+                  <option value="IN_PROGRESS">IN_PROGRESS</option>
+                  <option value="DONE">DONE</option>
+                  <option value="CLOSED">CLOSED</option>
+                </select>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                    th:text="#{task.edit.modal.button.close}"></button>
+            <button type="button" class="btn btn-primary" id="modal_task_save" data-dismiss="modal"
+                    th:text="#{task.edit.modal.button.save}"></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>

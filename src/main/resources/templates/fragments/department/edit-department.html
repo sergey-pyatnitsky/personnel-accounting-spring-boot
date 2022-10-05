@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ru">
+
+<body>
+<div class="container-fluid md-5 pt-5" th:fragment="edit-department" id="content-edit-department">
+  <h3 class="mb-4" th:text="#{department.edit.title}"></h3>
+  <div class="alert"></div>
+  <div class="row">
+    <div class="col">
+      <table class="table table-hover" id="edit_departments_table">
+        <thead>
+        <tr>
+          <th class="col-1">#</th>
+          <th class="col-4" th:text="#{department.edit.table.name}"></th>
+          <th class="col-2" th:text="#{department.edit.table.start_date}"></th>
+          <th class="col-2" th:text="#{department.edit.table.active}"></th>
+          <th class="col-2" th:text="#{department.edit.table.action}"></th>
+        </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+  <div class="modal fade" id="departmentEditModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+       aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" th:text="#{department.edit.modal.title}"></h5>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="department_modal_name" th:text="#{department.edit.modal.label}"></label>
+              <input type="text" class="form-control" id="department_modal_name"
+                     th:placeholder="#{department.edit.modal.placeholder}" required>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                  th:text="#{department.edit.modal.button.close}"></button>
+          <button type="button" class="btn btn-primary" id="save_department_modal_btn" data-dismiss="modal"
+                  th:text="#{department.edit.modal.button.save}"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ru">
+
+<body>
+<div class="container-fluid md-5 pt-5" th:fragment="view-project" id="content-view-project">
+  <h3 class="mb-4" th:text="#{project.view.title}"></h3>
+  <div class="row mb-5">
+    <div class="col-12">
+      <ul class="nav nav-tabs justify-content-center">
+        <li class="nav-item">
+          <a class="nav-link active" id="getOpenProjectsBtn" th:text="#{project.view.tab.open}"></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="getClosedProjectsBtn" th:text="#{project.view.tab.close}"></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <table class="table table-hover" id="view_projects_table">
+        <thead>
+        <tr>
+          <th class="col-1">#</th>
+          <th class="col-3" th:text="#{project.view.table.name}"></th>
+          <th class="col-2" th:text="#{project.view.table.department}"></th>
+          <th class="col-1" th:text="#{project.view.table.active}"></th>
+          <th class="col-2" th:text="#{project.view.table.start_date}"></th>
+          <th class="col-2" id="end_date_column" th:text="#{project.view.table.end_date}"></th>
+        </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link th:href="@{/resources/css/profile-page.css}" rel="stylesheet" type="text/css">
+
+<div th:replace="~{fragments/navbar :: navbar}"></div>
+<div class="d-flex align-items-start my-own-container">
+  <div class="container rounded bg-">
+    <div class="row">
+      <div class="col border-bottom">
+        <div class="d-flex flex-column align-items-center text-center p-3 py-5">
+          <img class="rounded-circle mt-5" width="150px" id="profile_image">
+          <span class="font-weight-bold" id="profile_name"></span>
+          <span class="text-black-50">[[${#httpServletRequest.remoteUser}]]</span>
+          <div class="form-group">
+            <form id="fileUploadForm">
+              <input type="button" id="loadFile" form="input_file" class="form-control-file"
+                     onclick="document.getElementById('input_file_button').click();" th:attr="value=#{profile.image_button}"/>
+              <input type="file" style="display:none;" name="file" id="input_file_button"/>
+              <label for="loadFile" id="labelForImageInput" th:text="#{profile.image}"></label>
+            </form>
+          </div>
+          <button type="submit" class="btn btn-primary" id="input_file" th:text="#{profile.edit_image}"></button>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-7 p-3 py-5">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h4 class="text-right" th:text="#{profile.personal_info}"></h4>
+        </div>
+        <form>
+          <div class="form-group">
+            <div class="col-md-12">
+              <label class="labels" for="name" th:text="#{profile.name}"></label>
+              <input type="text" class="form-control" id="name" value="" required>
+            </div>
+            <div class="col-md-12">
+              <label class="labels" for="phone" th:text="#{profile.phone}"></label>
+              <input type="text" class="form-control" id="phone" placeholder="+375(00)000-00-00" value="">
+            </div>
+            <div class="col-md-12">
+              <label class="labels" for="address" th:text="#{profile.address}"></label>
+              <input type="text" class="form-control" id="address" value="">
+            </div>
+            <div class="col-md-12">
+              <label class="labels" for="email" th:text="#{profile.email}"></label>
+              <input type="text" class="form-control" id="email" placeholder="example@acb.com" value="">
+            </div>
+            <div class="col-md-12">
+              <label class="labels" for="education" th:text="#{profile.education}"></label>
+              <input type="text" class="form-control" id="education" value="">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="labels" for="experience" th:text="#{profile.experience}"></label>
+            <textarea class="form-control" id="experience" rows="3"></textarea>
+          </div>
+          <div class="alert"></div>
+          <div class="form-group">
+            <button class="btn btn-primary profile-button" type="button" id="edit_profile"
+                    th:text="#{profile.button.save}"></button>
+            <button type="button" class="btn btn-danger edit_password" id="edit_pass" data-toggle="modal"
+                    data-target="#edit_modal" th:text="#{profile.button.edit_password}"></button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="edit_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+     aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle" th:text="#{profile.edit_password.title}"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="alert_pass"></div>
+        <form>
+          <div class="form-group">
+            <label for="modal_input_old_pass" th:text="#{profile.edit_password.input.old_pass}"></label>
+            <input type="text" class="form-control" id="modal_input_old_pass">
+          </div>
+          <div class="form-group">
+            <label for="modal_input_new_pass" th:text="#{profile.edit_password.input.new_pass}"></label>
+            <input type="text" class="form-control" id="modal_input_new_pass">
+          </div>
+          <div class="form-group">
+            <label for="modal_input_repeat" th:text="#{profile.edit_password.input.repeat_pass}"></label>
+            <input type="text" class="form-control" id="modal_input_repeat">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                th:text="#{profile.edit_password.button.close}"></button>
+        <button type="button" class="btn btn-primary" id="modal_save"
+                th:text="#{profile.edit_password.button.save}"></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript" th:src="@{/resources/js/main.js}"></script>
+<script type="text/javascript" th:src="@{/resources/js/profile.js}"></script>

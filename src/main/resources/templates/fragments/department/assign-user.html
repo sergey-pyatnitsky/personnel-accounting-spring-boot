@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ru">
+
+<body>
+<div class="container-fluid md-5 pt-5" th:fragment="assign-user" id="content-assign-user">
+  <h3 class="mb-4" th:text="#{department.assign.title}"></h3>
+  <div class="alert"></div>
+  <div class="row mb-5">
+    <div class="col-12">
+      <ul class="nav nav-tabs justify-content-center">
+        <li class="nav-item">
+          <a class="nav-link active" id="assignEmployeeBtn" th:text="#{department.assign.tab.assign}"></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="transferEmployeeBtn" th:text="#{department.assign.tab.transfer}"></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <table class="table table-hover" id="assign_users_table">
+        <thead>
+        <tr>
+          <th class="col-1">#</th>
+          <th class="col-2" th:text="#{department.assign.table.login}"></th>
+          <th class="col-3" th:text="#{department.assign.table.name}"></th>
+          <th class="col-2" th:text="#{department.assign.table.role}"></th>
+          <th class="col-3" th:text="#{department.assign.table.department}"></th>
+          <th class="col-1" th:text="#{department.assign.table.action}"></th>
+        </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+  <div class="modal fade" id="assignUserModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+       aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle" th:text="#{department.assign.modal.title}"></h5>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col-12">
+                      <label for="departmentSelectModalTable" th:text="#{department.assign.modal.label}"></label>
+                      <table class="table table-hover" id="departmentSelectModalTable" style="width:100%">
+                        <thead>
+                        <tr>
+                          <th class="col-1">#</th>
+                          <th class="col-4" th:text="#{department.assign.modal.table.name}"></th>
+                          <th class="col-4" th:text="#{department.assign.modal.table.choice}"></th>
+                        </tr>
+                        </thead>
+                        <tbody></tbody>
+                      </table>
+                    </div>
+                  </div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                  th:text="#{department.assign.modal.button}"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
