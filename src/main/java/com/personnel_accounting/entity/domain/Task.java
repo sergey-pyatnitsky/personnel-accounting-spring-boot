@@ -2,13 +2,14 @@ package com.personnel_accounting.entity.domain;
 
 import com.personnel_accounting.entity.enums.TaskStatus;
 import lombok.*;
+import lombok.experimental.SuperBuilder;
 import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
 
 @Getter
 @Setter
-@Builder
+@SuperBuilder
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
@@ -38,6 +39,6 @@ public class Task extends BaseEntity {
     @Column(name = "status", nullable = false, length = 15)
     private TaskStatus taskStatus;
 
-    @OneToOne(mappedBy = "task", fetch = FetchType.LAZY)
+    @OneToOne(mappedBy = "task")
     private ReportCard reportCard;
 }

@@ -1,15 +1,14 @@
 package com.personnel_accounting.entity.domain;
 
 import lombok.*;
+import lombok.experimental.SuperBuilder;
 import org.hibernate.annotations.Type;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Getter
 @Setter
-@Builder
+@SuperBuilder
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
@@ -34,4 +33,7 @@ public class Profile extends BaseEntity {
 
     @Column(name = "image_id", length = 45)
     private String imageId;
+
+    @OneToOne(mappedBy = "profile")
+    private Employee employee;
 }

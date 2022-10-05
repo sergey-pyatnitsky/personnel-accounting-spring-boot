@@ -1,10 +1,12 @@
 package com.personnel_accounting.entity.domain;
 
 import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 import javax.persistence.*;
 import java.sql.Date;
 
+@SuperBuilder
 @Getter
 @Setter
 @AllArgsConstructor
