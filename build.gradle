@@ -13,6 +13,10 @@ configurations {
     compileOnly {
         extendsFrom annotationProcessor
     }
+    developmentOnly
+    runtimeClasspath {
+        extendsFrom developmentOnly
+    }
 }
 
 repositories {
@@ -20,14 +24,17 @@ repositories {
 }
 
 dependencies {
+    developmentOnly "org.springframework.boot:spring-boot-devtools"
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-validation'
     implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
     implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation 'io.jsonwebtoken:jjwt:0.9.1'
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
     implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-mail:2.7.3'
 
-    implementation 'org.springframework.boot:spring-boot-starter-log4j2:2.7.2'
+    implementation 'org.springframework.boot:spring-boot-starter-log4j2:2.7.3'
     modules {
         module('org.springframework.boot:spring-boot-starter-logging') {
             replacedBy 'org.springframework.boot:spring-boot-starter-log4j2', 'Use Log4j2 instead of Logback'
@@ -46,12 +53,16 @@ dependencies {
     liquibaseRuntime 'org.liquibase:liquibase-core'
     liquibaseRuntime 'info.picocli:picocli:4.6.3'
     liquibaseRuntime 'org.postgresql:postgresql'
-    liquibaseRuntime 'org.yaml:snakeyaml:1.30'
+    liquibaseRuntime 'org.yaml:snakeyaml:1.32'
     liquibaseRuntime sourceSets.main.output
 
     implementation 'org.mapstruct:mapstruct:1.5.2.Final'
     annotationProcessor 'org.mapstruct:mapstruct-processor:1.5.2.Final'
     annotationProcessor "org.projectlombok:lombok-mapstruct-binding:0.2.0"
+
+    //Google API
+    implementation 'com.google.api-client:google-api-client:2.0.0'
+    implementation 'com.google.apis:google-api-services-drive:v3-rev20220815-2.0.0'
 }
 
 apply plugin: "org.liquibase.gradle"
