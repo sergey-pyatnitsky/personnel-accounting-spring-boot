@@ -1,5 +1,6 @@
 package com.personnel_accounting.entity.pagination;
 
+import com.personnel_accounting.entity.enums.DirectionEnum;
 import lombok.*;
 
 @Setter
@@ -10,6 +11,6 @@ import lombok.*;
 public class Order {
 
     private Integer column;
-    private Direction dir;
+    private DirectionEnum dir;
 
 }
