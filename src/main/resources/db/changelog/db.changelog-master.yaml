@@ -1,23 +1,43 @@
 databaseChangeLog:
   - include:
-      file: db/changelog/changeset/create_authority_table.yaml
+      file: db/changelog/changeset/create/create_authority_table.yaml
   - include:
-      file: db/changelog/changeset/create_user_table.yaml
+      file: db/changelog/changeset/create/create_user_table.yaml
   - include:
-      file: db/changelog/changeset/create_user_authorities_table.yaml
+      file: db/changelog/changeset/create/create_user_authorities_table.yaml
   - include:
-      file: db/changelog/changeset/create_profile_table.yaml
+      file: db/changelog/changeset/create/create_profile_table.yaml
   - include:
-      file: db/changelog/changeset/create_position_table.yaml
+      file: db/changelog/changeset/create/create_position_table.yaml
   - include:
-      file: db/changelog/changeset/create_department_table.yaml
+      file: db/changelog/changeset/create/create_department_table.yaml
   - include:
-      file: db/changelog/changeset/create_employee_table.yaml
+      file: db/changelog/changeset/create/create_employee_table.yaml
   - include:
-      file: db/changelog/changeset/create_project_table.yaml
+      file: db/changelog/changeset/create/create_project_table.yaml
   - include:
-      file: db/changelog/changeset/create_task_table.yaml
+      file: db/changelog/changeset/create/create_task_table.yaml
   - include:
-      file: db/changelog/changeset/create_report_card_table.yaml
+      file: db/changelog/changeset/create/create_report_card_table.yaml
   - include:
-      file: db/changelog/changeset/create_employee_position_table.yaml
+      file: db/changelog/changeset/create/create_employee_position_table.yaml
+  - include:
+      file: db/changelog/changeset/insert/insert_roles_into_authority_table.yaml
+  - include:
+      file: db/changelog/changeset/insert/insert_users_into_user_table.yaml
+  - include:
+      file: db/changelog/changeset/insert/insert_relation_into_user_authorities_table.yaml
+  - include:
+      file: db/changelog/changeset/insert/insert_profiles_into_profile_table.yaml
+  - include:
+      file: db/changelog/changeset/insert/insert_departments_into_department_table.yaml
+  - include:
+      file: db/changelog/changeset/insert/insert_employee_into_employee_table.yaml
+  - include:
+      file: db/changelog/changeset/insert/insert_positions_into_position_table.yaml
+  - include:
+      file: db/changelog/changeset/insert/insert_projects_into_project_table.yaml
+  - include:
+      file: db/changelog/changeset/insert/insert_employee_position_into_employee_position_table.yaml
+  - include:
+      file: db/changelog/changeset/insert/insert_tasks_into_task_table.yaml

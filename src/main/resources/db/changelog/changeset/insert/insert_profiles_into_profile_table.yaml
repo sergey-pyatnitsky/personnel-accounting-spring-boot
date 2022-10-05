@@ -1,0 +1,161 @@
+databaseChangeLog:
+  - changeSet:
+      id: insert_profiles_into_profile_table.yaml
+      author: Pyatnitsky
+      changes:
+        - insert:
+            tableName: profile
+            columns:
+              - column:
+                  name: email
+                  value: seruyfsqwe@gmail.com
+              - column:
+                  name: image_id
+                  value: 1fvYTCz3IanxXOeRZgy1J98B0LN6chjOA
+              - column:
+                  name: create_date
+                  value: 2022-10-01
+              - column:
+                  name: phone
+                  value: +375(29)598-22-22
+              - column:
+                  name: address
+                  value: ул.Сурганова 28
+              - column:
+                  name: education
+                  value: Высшее БГУИР
+              - column:
+                  name: skills
+                  value: Пишу компилятор закрытыми глазами и без рук
+        - insert:
+            tableName: profile
+            columns:
+              - column:
+                  name: email
+                  value: seruqwe@gmail.com
+              - column:
+                  name: image_id
+                  value: 1fvYTCz3IanxXOeRZgy1J98B0LN6chjOA
+              - column:
+                  name: create_date
+                  value: 2022-10-01
+              - column:
+                  name: phone
+                  value: +375(29)556-22-22
+              - column:
+                  name: address
+                  value: ул.Сурганова 90
+              - column:
+                  name: education
+                  value: Высшее БГЭУ
+              - column:
+                  name: skills
+                  value: Пишу компилятор открытыми глазами и без рук
+        - insert:
+            tableName: profile
+            columns:
+              - column:
+                  name: email
+                  value: seruyfs2@gmail.com
+              - column:
+                  name: image_id
+                  value: 1fvYTCz3IanxXOeRZgy1J98B0LN6chjOA
+              - column:
+                  name: create_date
+                  value: 2022-10-01
+        - insert:
+            tableName: profile
+            columns:
+              - column:
+                  name: email
+                  value: s21321fs2@gmail.com
+              - column:
+                  name: image_id
+                  value: 1fvYTCz3IanxXOeRZgy1J98B0LN6chjOA
+              - column:
+                  name: create_date
+                  value: 2022-10-01
+        - insert:
+            tableName: profile
+            columns:
+              - column:
+                  name: email
+                  value: s21sadfsdf321fs2@gmail.com
+              - column:
+                  name: image_id
+                  value: 1fvYTCz3IanxXOeRZgy1J98B0LN6chjOA
+              - column:
+                  name: create_date
+                  value: 2022-10-01
+        - insert:
+            tableName: profile
+            columns:
+              - column:
+                  name: email
+                  value: sdfsdfsdf@mail.ru
+              - column:
+                  name: image_id
+                  value: 1fvYTCz3IanxXOeRZgy1J98B0LN6chjOA
+              - column:
+                  name: create_date
+                  value: 2022-10-01
+        - insert:
+            tableName: profile
+            columns:
+              - column:
+                  name: email
+                  value: sdfsdfs213123df@mail.ru
+              - column:
+                  name: image_id
+                  value: 1fvYTCz3IanxXOeRZgy1J98B0LN6chjOA
+              - column:
+                  name: create_date
+                  value: 2022-10-01
+        - insert:
+            tableName: profile
+            columns:
+              - column:
+                  name: email
+                  value: sdfsdfs2131sdf23df@mail.ru
+              - column:
+                  name: image_id
+                  value: 1fvYTCz3IanxXOeRZgy1J98B0LN6chjOA
+              - column:
+                  name: create_date
+                  value: 2022-10-01
+        - insert:
+            tableName: profile
+            columns:
+              - column:
+                  name: email
+                  value: qwerty@mail.ru
+              - column:
+                  name: image_id
+                  value: 1fvYTCz3IanxXOeRZgy1J98B0LN6chjOA
+              - column:
+                  name: create_date
+                  value: 2022-10-01
+        - insert:
+            tableName: profile
+            columns:
+              - column:
+                  name: email
+                  value: qwer213ty@mail.ru
+              - column:
+                  name: image_id
+                  value: 1fvYTCz3IanxXOeRZgy1J98B0LN6chjOA
+              - column:
+                  name: create_date
+                  value: 2022-10-01
+        - insert:
+            tableName: profile
+            columns:
+              - column:
+                  name: email
+                  value: qwer21asd3ty@mail.ru
+              - column:
+                  name: image_id
+                  value: 1fvYTCz3IanxXOeRZgy1J98B0LN6chjOA
+              - column:
+                  name: create_date
+                  value: 2022-10-01

@@ -1,0 +1,92 @@
+databaseChangeLog:
+  - changeSet:
+      id: insert_projects_into_project_table.yaml
+      author: Pyatnitsky
+      changes:
+        - insert:
+            tableName: project
+            columns:
+              - column:
+                  name: name
+                  value: Разработка системы обслуживания Белинвестбанка
+              - column:
+                  name: active
+                  value: true
+              - column:
+                  name: department_id
+                  value: 1
+              - column:
+                  name: create_date
+                  value: 2022-10-05
+              - column:
+                  name: modified_date
+                  value: 2022-10-05
+              - column:
+                  name: start_date
+                  value: 2022-10-05
+        - insert:
+            tableName: project
+            columns:
+              - column:
+                  name: name
+                  value: Разработка системы парсинга цен криптовалюты
+              - column:
+                  name: active
+                  value: true
+              - column:
+                  name: department_id
+                  value: 4
+              - column:
+                  name: create_date
+                  value: 2022-10-05
+              - column:
+                  name: modified_date
+                  value: 2022-10-05
+              - column:
+                  name: start_date
+                  value: 2022-10-05
+        - insert:
+            tableName: project
+            columns:
+              - column:
+                  name: name
+                  value: Разработка CRM систем
+              - column:
+                  name: active
+                  value: true
+              - column:
+                  name: department_id
+                  value: 3
+              - column:
+                  name: create_date
+                  value: 2022-10-05
+              - column:
+                  name: modified_date
+                  value: 2022-10-05
+              - column:
+                  name: start_date
+                  value: 2022-10-05
+        - insert:
+            tableName: project
+            columns:
+              - column:
+                  name: name
+                  value: Разработка ненужной системы
+              - column:
+                  name: active
+                  value: false
+              - column:
+                  name: department_id
+                  value: 3
+              - column:
+                  name: create_date
+                  value: 2022-10-05
+              - column:
+                  name: modified_date
+                  value: 2022-10-05
+              - column:
+                  name: end_date
+                  value: 2022-10-05
+              - column:
+                  name: start_date
+                  value: 2022-10-05

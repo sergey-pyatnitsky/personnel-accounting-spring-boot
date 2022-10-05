@@ -1,0 +1,50 @@
+databaseChangeLog:
+  - changeSet:
+      id: insert_roles_into_authority_table
+      author: Pyatnitsky
+      changes:
+        - insert:
+            tableName: authority
+            columns:
+              - column:
+                  name: id
+                  value: 1
+              - column:
+                  name: name
+                  value: SUPER_ADMIN
+        - insert:
+            tableName: authority
+            columns:
+              - column:
+                  name: id
+                  value: 2
+              - column:
+                  name: name
+                  value: ADMIN
+        - insert:
+            tableName: authority
+            columns:
+              - column:
+                  name: id
+                  value: 3
+              - column:
+                  name: name
+                  value: DEPARTMENT_HEAD
+        - insert:
+            tableName: authority
+            columns:
+              - column:
+                  name: id
+                  value: 4
+              - column:
+                  name: name
+                  value: PROJECT_MANAGER
+        - insert:
+            tableName: authority
+            columns:
+              - column:
+                  name: id
+                  value: 5
+              - column:
+                  name: name
+                  value: EMPLOYEE

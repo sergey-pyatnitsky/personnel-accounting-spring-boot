@@ -1,0 +1,218 @@
+databaseChangeLog:
+  - changeSet:
+      id: insert_employee_into_employee_table.yaml
+      author: Pyatnitsky
+      changes:
+        - insert:
+            tableName: employee
+            columns:
+              - column:
+                  name: username
+                  value: admin
+              - column:
+                  name: name
+                  value: Иванов Иван Иванович
+              - column:
+                  name: active
+                  value: true
+              - column:
+                  name: profile_id
+                  value: 1
+              - column:
+                  name: create_date
+                  value: 2022-10-01
+              - column:
+                  name: department_id
+                  value: 1
+        - insert:
+            tableName: employee
+            columns:
+              - column:
+                  name: username
+                  value: admin2
+              - column:
+                  name: name
+                  value: Иванов Игорь Григорьевич
+              - column:
+                  name: active
+                  value: false
+              - column:
+                  name: profile_id
+                  value: 2
+              - column:
+                  name: create_date
+                  value: 2022-09-01
+              - column:
+                  name: department_id
+                  value: 4
+        - insert:
+            tableName: employee
+            columns:
+              - column:
+                  name: username
+                  value: employee
+              - column:
+                  name: name
+                  value: Зубенко Михалина Петровна
+              - column:
+                  name: active
+                  value: false
+              - column:
+                  name: profile_id
+                  value: 3
+              - column:
+                  name: create_date
+                  value: 2022-10-01
+              - column:
+                  name: department_id
+                  value: 4
+        - insert:
+            tableName: employee
+            columns:
+              - column:
+                  name: username
+                  value: employee2
+              - column:
+                  name: name
+                  value: Зубенко Михалина Игоревна
+              - column:
+                  name: active
+                  value: false
+              - column:
+                  name: profile_id
+                  value: 4
+              - column:
+                  name: create_date
+                  value: 2022-10-01
+        - insert:
+            tableName: employee
+            columns:
+              - column:
+                  name: username
+                  value: employee3
+              - column:
+                  name: name
+                  value: Зубко Михалина Игоревна
+              - column:
+                  name: active
+                  value: false
+              - column:
+                  name: profile_id
+                  value: 5
+              - column:
+                  name: create_date
+                  value: 2022-10-01
+        - insert:
+            tableName: employee
+            columns:
+              - column:
+                  name: username
+                  value: department_head
+              - column:
+                  name: name
+                  value: Михайлов Михаил Петрович
+              - column:
+                  name: active
+                  value: false
+              - column:
+                  name: profile_id
+                  value: 6
+              - column:
+                  name: create_date
+                  value: 2022-10-01
+              - column:
+                  name: department_id
+                  value: 4
+        - insert:
+            tableName: employee
+            columns:
+              - column:
+                  name: username
+                  value: department_head2
+              - column:
+                  name: name
+                  value: Михайлов Игорь Петрович
+              - column:
+                  name: active
+                  value: false
+              - column:
+                  name: profile_id
+                  value: 7
+              - column:
+                  name: create_date
+                  value: 2022-10-01
+        - insert:
+            tableName: employee
+            columns:
+              - column:
+                  name: username
+                  value: department_head3
+              - column:
+                  name: name
+                  value: Михайлов Игорь Петрович
+              - column:
+                  name: active
+                  value: false
+              - column:
+                  name: profile_id
+                  value: 8
+              - column:
+                  name: create_date
+                  value: 2022-10-01
+        - insert:
+            tableName: employee
+            columns:
+              - column:
+                  name: username
+                  value: project_manager
+              - column:
+                  name: name
+                  value: Петров Михаил Иванович
+              - column:
+                  name: active
+                  value: false
+              - column:
+                  name: profile_id
+                  value: 9
+              - column:
+                  name: create_date
+                  value: 2022-10-01
+              - column:
+                  name: department_id
+                  value: 4
+        - insert:
+            tableName: employee
+            columns:
+              - column:
+                  name: username
+                  value: project_manager2
+              - column:
+                  name: name
+                  value: Иванов Михаил Иванович
+              - column:
+                  name: active
+                  value: false
+              - column:
+                  name: profile_id
+                  value: 10
+              - column:
+                  name: create_date
+                  value: 2022-10-01
+        - insert:
+            tableName: employee
+            columns:
+              - column:
+                  name: username
+                  value: project_manager3
+              - column:
+                  name: name
+                  value: Иванов Михаил Иванович
+              - column:
+                  name: active
+                  value: false
+              - column:
+                  name: profile_id
+                  value: 11
+              - column:
+                  name: create_date
+                  value: 2022-10-01

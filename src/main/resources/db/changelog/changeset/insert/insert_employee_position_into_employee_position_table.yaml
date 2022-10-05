@@ -1,0 +1,29 @@
+databaseChangeLog:
+  - changeSet:
+      id: insert_employee_position_into_employee_position_table.yaml
+      author: Pyatnitsky
+      changes:
+        - insert:
+            tableName: employee_position
+            columns:
+              - column:
+                  name: active
+                  value: true
+              - column:
+                  name: department_id
+                  value: 1
+              - column:
+                  name: employee_id
+                  value: 1
+              - column:
+                  name: project_id
+                  value: 1
+              - column:
+                  name: position_id
+                  value: 1
+              - column:
+                  name: create_date
+                  value: 2022-10-05
+              - column:
+                  name: start_date
+                  value: 2022-10-05

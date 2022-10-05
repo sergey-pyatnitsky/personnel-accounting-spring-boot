@@ -1,0 +1,150 @@
+databaseChangeLog:
+  - changeSet:
+      id: insert_users_into_user_table
+      author: Pyatnitsky
+      changes:
+        - insert:
+            tableName: user
+            columns:
+              - column:
+                  name: username
+                  value: super_admin
+              - column:
+                  name: password
+                  value: "{bcrypt}$2a$10$6vx/u.qS7Jo9Wxdr.exnkOjXLHYMF9FjBUSCEdKqlutIiDVZv0SNK"
+              - column:
+                  name: enabled
+                  value: true
+        - insert:
+            tableName: user
+            columns:
+              - column:
+                  name: username
+                  value: admin
+              - column:
+                  name: password
+                  value: "{bcrypt}$2a$10$EShXkCxCkfjXc0Puvo2Yn.MZuK9P.pHSm1ePdtZf5FUvglyD5oQt2"
+              - column:
+                  name: enabled
+                  value: true
+        - insert:
+            tableName: user
+            columns:
+              - column:
+                  name: username
+                  value: admin2
+              - column:
+                  name: password
+                  value: "{bcrypt}$2y$10$SNUP/b7LKqfYbHXtK95QaePf.kKcsiv1IDRtL/I/ugNyMO1hmCEwe"
+              - column:
+                  name: enabled
+                  value: true
+        - insert:
+            tableName: user
+            columns:
+              - column:
+                  name: username
+                  value: employee
+              - column:
+                  name: password
+                  value: "{bcrypt}$2a$10$kFw17pYdsyU/U7eKX6it5ORY/0nhyGjL/nHZdyNFKV28atQxzlyFG"
+              - column:
+                  name: enabled
+                  value: true
+        - insert:
+            tableName: user
+            columns:
+              - column:
+                  name: username
+                  value: employee2
+              - column:
+                  name: password
+                  value: "{bcrypt}$2y$10$6fEFLvG3dkzimv2NBgXEW.tVITLGlJEil19xNLTOKPTPN7P0dI8a2"
+              - column:
+                  name: enabled
+                  value: true
+        - insert:
+            tableName: user
+            columns:
+              - column:
+                  name: username
+                  value: employee3
+              - column:
+                  name: password
+                  value: "{bcrypt}$2y$10$9Uxo4r4PaiIr3Ns0TOzESu4mwmpquxx7H/eNfveyRHxgK2aaA2EIq"
+              - column:
+                  name: enabled
+                  value: false
+        - insert:
+            tableName: user
+            columns:
+              - column:
+                  name: username
+                  value: department_head
+              - column:
+                  name: password
+                  value: "{bcrypt}$2a$10$MWA8t8JsSkeFjNOtEGQfA.4GpDbccsa/ZTtiQbsQPNztxVawsRaGa"
+              - column:
+                  name: enabled
+                  value: true
+        - insert:
+            tableName: user
+            columns:
+              - column:
+                  name: username
+                  value: department_head2
+              - column:
+                  name: password
+                  value: "{bcrypt}$2y$10$n82TGIIm3vOqTzsRPehxi.dd.kA9EsMJHu14n/frJZUqMTU5S6LWO"
+              - column:
+                  name: enabled
+                  value: true
+        - insert:
+            tableName: user
+            columns:
+              - column:
+                  name: username
+                  value: department_head3
+              - column:
+                  name: password
+                  value: "{bcrypt}$2y$10$aYM26fvQyiJd4y7Pbd24deEmFw9Vq0WNFerGuH28dL1dthNxh.DOS"
+              - column:
+                  name: enabled
+                  value: true
+        - insert:
+            tableName: user
+            columns:
+              - column:
+                  name: username
+                  value: project_manager
+              - column:
+                  name: password
+                  value: "{bcrypt}$2a$10$w83kQhVb5O6BSRcAzx2qROI6TwClLHH/pS0eAEHRVzBPpgk7P2Y8m"
+              - column:
+                  name: enabled
+                  value: true
+        - insert:
+            tableName: user
+            columns:
+              - column:
+                  name: username
+                  value: project_manager2
+              - column:
+                  name: password
+                  value: "{bcrypt}$2y$10$lOtwQK70YZjKyL3ImKJl/.8vTtJTfO5YFCEf5/1Rokr.Q8kUh2wpa"
+              - column:
+                  name: enabled
+                  value: true
+        - insert:
+            tableName: user
+            columns:
+              - column:
+                  name: username
+                  value: project_manager3
+              - column:
+                  name: password
+                  value: "{bcrypt}$2y$10$XpIP.Qc9ToJ65ud5NddfHe3D8mu/J8e7sfA1sRTbrJH2ARMReL2pS"
+              - column:
+                  name: enabled
+                  value: true
+

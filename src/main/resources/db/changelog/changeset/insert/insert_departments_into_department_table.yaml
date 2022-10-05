@@ -1,0 +1,98 @@
+databaseChangeLog:
+  - changeSet:
+      id: insert_departments_into_department_table.yaml
+      author: Pyatnitsky
+      changes:
+        - insert:
+            tableName: department
+            columns:
+              - column:
+                  name: name
+                  value: Отдел Java разработки
+              - column:
+                  name: active
+                  value: true
+              - column:
+                  name: start_date
+                  value: 2022-10-04
+              - column:
+                  name: create_date
+                  value: 2022-10-04
+              - column:
+                  name: modified_date
+                  value: 2022-10-04
+        - insert:
+            tableName: department
+            columns:
+              - column:
+                  name: name
+                  value: Отдел Python разработки
+              - column:
+                  name: active
+                  value: true
+              - column:
+                  name: start_date
+                  value: 2022-10-04
+              - column:
+                  name: create_date
+                  value: 2022-10-04
+              - column:
+                  name: modified_date
+                  value: 2022-10-04
+        - insert:
+            tableName: department
+            columns:
+              - column:
+                  name: name
+                  value: Отдел C# разработки
+              - column:
+                  name: active
+                  value: true
+              - column:
+                  name: start_date
+                  value: 2022-10-04
+              - column:
+                  name: create_date
+                  value: 2022-10-04
+              - column:
+                  name: modified_date
+                  value: 2022-10-04
+        - insert:
+            tableName: department
+            columns:
+              - column:
+                  name: name
+                  value: Отдел JavaScript разработки
+              - column:
+                  name: active
+                  value: true
+              - column:
+                  name: start_date
+                  value: 2022-10-04
+              - column:
+                  name: create_date
+                  value: 2022-10-04
+              - column:
+                  name: modified_date
+                  value: 2022-10-04
+        - insert:
+            tableName: department
+            columns:
+              - column:
+                  name: name
+                  value: Отдел C++ разработки
+              - column:
+                  name: active
+                  value: false
+              - column:
+                  name: start_date
+                  value: 2022-10-04
+              - column:
+                  name: create_date
+                  value: 2022-10-04
+              - column:
+                  name: modified_date
+                  value: 2022-10-04
+              - column:
+                  name: end_date
+                  value: 2022-10-04

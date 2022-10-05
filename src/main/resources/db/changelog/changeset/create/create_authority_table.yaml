@@ -20,11 +20,3 @@ databaseChangeLog:
                   constraints:
                     nullable: false
                     unique: true
-              - column:
-                  name: create_date
-                  type: date
-                  constraints:
-                    nullable: false
-              - column:
-                  name: modified_date
-                  type: date

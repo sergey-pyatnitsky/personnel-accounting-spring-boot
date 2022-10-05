@@ -1,0 +1,23 @@
+databaseChangeLog:
+  - changeSet:
+      id: insert_positions_into_position_table.yaml
+      author: Pyatnitsky
+      changes:
+        - insert:
+            tableName: position
+            columns:
+              - column:
+                  name: name
+                  value: Разработчик
+              - column:
+                  name: create_date
+                  value: 2022-10-01
+        - insert:
+            tableName: position
+            columns:
+              - column:
+                  name: name
+                  value: Тестировщик
+              - column:
+                  name: create_date
+                  value: 2022-10-01

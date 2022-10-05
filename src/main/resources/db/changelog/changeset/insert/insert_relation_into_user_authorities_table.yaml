@@ -1,0 +1,113 @@
+databaseChangeLog:
+  - changeSet:
+      id: insert_relation_into_user_authorities_table.yaml
+      author: Pyatnitsky
+      changes:
+        - insert:
+            tableName: user_authorities
+            columns:
+              - column:
+                  name: user_username
+                  value: super_admin
+              - column:
+                  name: authority_id
+                  value: 1
+        - insert:
+            tableName: user_authorities
+            columns:
+              - column:
+                  name: user_username
+                  value: admin
+              - column:
+                  name: authority_id
+                  value: 2
+        - insert:
+            tableName: user_authorities
+            columns:
+              - column:
+                  name: user_username
+                  value: admin2
+              - column:
+                  name: authority_id
+                  value: 2
+        - insert:
+            tableName: user_authorities
+            columns:
+              - column:
+                  name: user_username
+                  value: department_head
+              - column:
+                  name: authority_id
+                  value: 3
+        - insert:
+            tableName: user_authorities
+            columns:
+              - column:
+                  name: user_username
+                  value: department_head2
+              - column:
+                  name: authority_id
+                  value: 3
+        - insert:
+            tableName: user_authorities
+            columns:
+              - column:
+                  name: user_username
+                  value: department_head3
+              - column:
+                  name: authority_id
+                  value: 3
+        - insert:
+            tableName: user_authorities
+            columns:
+              - column:
+                  name: user_username
+                  value: project_manager
+              - column:
+                  name: authority_id
+                  value: 4
+        - insert:
+            tableName: user_authorities
+            columns:
+              - column:
+                  name: user_username
+                  value: project_manager2
+              - column:
+                  name: authority_id
+                  value: 4
+        - insert:
+            tableName: user_authorities
+            columns:
+              - column:
+                  name: user_username
+                  value: project_manager3
+              - column:
+                  name: authority_id
+                  value: 4
+        - insert:
+            tableName: user_authorities
+            columns:
+              - column:
+                  name: user_username
+                  value: employee
+              - column:
+                  name: authority_id
+                  value: 5
+        - insert:
+            tableName: user_authorities
+            columns:
+              - column:
+                  name: user_username
+                  value: employee2
+              - column:
+                  name: authority_id
+                  value: 5
+        - insert:
+            tableName: user_authorities
+            columns:
+              - column:
+                  name: user_username
+                  value: employee3
+              - column:
+                  name: authority_id
+                  value: 5

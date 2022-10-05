@@ -1,0 +1,53 @@
+databaseChangeLog:
+  - changeSet:
+      id: insert_tasks_into_task_table.yaml
+      author: Pyatnitsky
+      changes:
+        - insert:
+            tableName: task
+            columns:
+              - column:
+                  name: name
+                  value: Разработать авторизацию
+              - column:
+                  name: description
+                  value: "Авторизация используя JWT + OAuth 2.0. Роли: администратор, суперпользователь, менеджер, сотрудник"
+              - column:
+                  name: status
+                  value: IN_PROGRESS
+              - column:
+                  name: assignee_id
+                  value: 1
+              - column:
+                  name: project_id
+                  value: 1
+              - column:
+                  name: reporter_id
+                  value: 1
+              - column:
+                  name: create_date
+                  value: 2022-10-06
+        - insert:
+            tableName: task
+            columns:
+              - column:
+                  name: name
+                  value: Разработать регистрацию
+              - column:
+                  name: description
+                  value: "Регистрация по почте с вводом ФИО и номер телефона"
+              - column:
+                  name: status
+                  value: OPEN
+              - column:
+                  name: assignee_id
+                  value: 1
+              - column:
+                  name: project_id
+                  value: 1
+              - column:
+                  name: reporter_id
+                  value: 1
+              - column:
+                  name: create_date
+                  value: 2022-10-06
