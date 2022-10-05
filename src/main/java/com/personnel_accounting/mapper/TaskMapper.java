@@ -9,7 +9,7 @@ import org.mapstruct.ReportingPolicy;
 import java.util.List;
 
 @Mapper(componentModel = "spring",
-        uses = {EmployeeMapper.class, ProjectMapper.class, DepartmentMapper.class},
+        uses = {EmployeeMapper.class, ProjectMapper.class, DepartmentMapper.class, DateMapper.class},
         unmappedTargetPolicy = ReportingPolicy.IGNORE)
 public interface TaskMapper {
 

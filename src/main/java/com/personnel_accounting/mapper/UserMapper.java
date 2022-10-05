@@ -8,12 +8,16 @@ import org.mapstruct.ReportingPolicy;
 
 import java.util.List;
 
-@Mapper(componentModel = "spring", unmappedTargetPolicy = ReportingPolicy.IGNORE)
+@Mapper(componentModel = "spring",
+        uses = RoleMapper.class,
+        unmappedTargetPolicy = ReportingPolicy.IGNORE)
 public interface UserMapper {
 
+    @Mapping(target = "authority", expression = "java(RoleMapper.toDTO(user.getRoles()))")
     UserDTO toDto(User user);
 
     @Mapping(target = "isActive", source = "active")
+    @Mapping(target = "roles", expression = "java(RoleMapper.toModal(userDTO.getAuthority()))")
     User toModal(UserDTO userDTO);
 
     List<UserDTO> toDtoList(List<User> users);
