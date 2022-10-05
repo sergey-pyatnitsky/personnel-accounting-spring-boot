@@ -2,15 +2,14 @@ package com.personnel_accounting.entity.dto;
 
 import lombok.Data;
 
-import javax.validation.constraints.NotBlank;
-import java.util.Set;
+import javax.validation.Valid;
 
 @Data
 public class UserDTO {
     private String username;
-
-    @NotBlank(message = "{user.validator.password.empty}")
     private String password;
-    private Set<AuthorityDTO> roles;
+
+    @Valid
+    private AuthorityDTO authority;
     private boolean isActive;
 }

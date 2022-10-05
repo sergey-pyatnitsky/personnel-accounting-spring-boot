@@ -3,6 +3,7 @@ package com.personnel_accounting.entity.dto;
 import com.personnel_accounting.entity.enums.TaskStatus;
 import lombok.Data;
 
+import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
@@ -16,9 +17,17 @@ public class TaskDTO {
 
     @NotBlank(message = "{task.validator.description.empty}")
     private String description;
+
+    @Valid
     private ProjectDTO project;
+
+    @Valid
     private DepartmentDTO department;
+
+    @Valid
     private EmployeeDTO reporter;
+
+    @Valid
     private EmployeeDTO assignee;
     private TaskStatus status;
     private String createDate;
