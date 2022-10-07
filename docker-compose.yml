@@ -1,0 +1,24 @@
+version: "2.4"
+
+services:
+  db:
+    image: postgres:14.4
+    container_name: db
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=personnel_accounting
+    ports:
+      - "5432:5432"
+  webapp:
+    build: .
+    container_name: personnel_accounting
+    restart: always
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    environment:
+      DATASOURCE_PASSWORD: postgres
+      DATASOURCE_URL: jdbc:postgresql://db:5432/personnel_accounting
+      DATASOURCE_USERNAME: postgres
